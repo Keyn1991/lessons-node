@@ -59,27 +59,27 @@ console.log(os.arch())
 // });
 
 
-// const mainFolder = './mainFolder';
-//
-// fs.readdir(mainFolder, (err, files) => {
-//     if (err) {
-//         console.error(err);
-//         return;
-//     }
-//
-//     files.forEach(file => {
-//         const filePath = path.join(mainFolder, file);
-//         fs.stat(filePath, (err, stats) => {
-//             if (err) {
-//                 console.error(err);
-//                 return;
-//             }
-//
-//             if (stats.isDirectory()) {
-//                 console.log(`FOLDER: ${file}`);
-//             } else {
-//                 console.log(`FILE: ${file}`);
-//             }
-//         });
-//     });
-// });
+const mainFolder = './mainFolder';
+
+fs.readdir(mainFolder, (err, files) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    files.forEach(file => {
+        const filePath = path.join(mainFolder, file);
+        fs.stat(filePath, (err, stats) => {
+            if (err) {
+                console.error(err);
+                return;
+            }
+
+            if (stats.isDirectory()) {
+                console.log(`FOLDER: ${file}`);
+            } else {
+                console.log(`FILE: ${file}`);
+            }
+        });
+    });
+});
